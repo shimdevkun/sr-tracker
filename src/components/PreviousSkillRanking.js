@@ -7,14 +7,20 @@ const PreviousSkillRanking = ({ skillRanking, difference }) => {
     return difference > 0 ? `+${difference}` : difference;
   }
 
+  const getDifferenceClassColor = () => {
+    if (difference === 0)
+      return;
+    return difference > 0 ? 'positive' : 'negative';
+  }
+
   return (
     <section id="previous-sr">
       <div className="sr-info">
-        <h4>Previous game</h4>
-        <p>{skillRanking}</p>
+        <p className="title">Previous game</p>
+        <p className="prev-sr">{skillRanking}</p>
       </div>
 
-      <span className="sr-difference">{displayDifference()}</span>
+      <span className={`sr-difference ${getDifferenceClassColor()}`}>{displayDifference()}</span>
     </section>
   )
 }

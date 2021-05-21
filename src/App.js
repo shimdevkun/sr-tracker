@@ -22,7 +22,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="container--main">
       <PreviousSkillRanking
         skillRanking={getPreviousSkillRanking()}
         difference={getDifference()} />
