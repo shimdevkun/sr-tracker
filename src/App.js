@@ -8,30 +8,30 @@ import AddGameStat from './components/AddGameStat';
 
 function App() {
   const [gameStats, setGameStats] = useState([
-    {
-      skillRanking: 3572,
-      healing: 7550,
-      hero: 'Baptiste',
-      map: 'Illios'
-    },
-    {
-      skillRanking: 3599,
-      healing: 8550,
-      hero: 'Ana',
-      map: 'Kings Row'
-    },
-    {
-      skillRanking: 3476,
-      healing: 11500,
-      hero: 'Ana',
-      map: 'Oasis'
-    },
-    {
-      skillRanking: 3500,
-      healing: 1059,
-      hero: 'Mercy',
-      map: 'Hanamura'
-    }
+    // {
+    //   skillRanking: 3572,
+    //   healing: 7550,
+    //   hero: 'Baptiste',
+    //   map: 'Illios'
+    // },
+    // {
+    //   skillRanking: 3599,
+    //   healing: 8550,
+    //   hero: 'Ana',
+    //   map: 'Kings Row'
+    // },
+    // {
+    //   skillRanking: 3476,
+    //   healing: 11500,
+    //   hero: 'Ana',
+    //   map: 'Oasis'
+    // },
+    // {
+    //   skillRanking: 3500,
+    //   healing: 1059,
+    //   hero: 'Mercy',
+    //   map: 'Hanamura'
+    // }
   ]);
 
   const getCurrentSkillRanking = () => {
@@ -63,10 +63,10 @@ function App() {
         render={(props) => (
           <>
             {<PreviousSkillRanking
-              skillRanking={getPreviousSkillRanking()}
-              difference={getDifference()} />}
+              skillRanking={gameStats.length > 1 ? getPreviousSkillRanking() : 'N/A'}
+              difference={gameStats.length > 1 ? getDifference() : 'N/A'} />}
             {<CurrentSkillRanking
-              skillRanking={getCurrentSkillRanking()} />}
+              skillRanking={gameStats.length > 0 ? getCurrentSkillRanking() : 'N/A'} />}
             {<HomeActions />}
           </>
         )}

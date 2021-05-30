@@ -8,7 +8,7 @@ const PreviousSkillRanking = ({ skillRanking, difference }) => {
   }
 
   const getDifferenceClassColor = () => {
-    if (difference === 0)
+    if (difference === 0 || difference === 'N/A')
       return;
     return difference > 0 ? 'positive' : 'negative';
   }
