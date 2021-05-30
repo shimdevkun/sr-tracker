@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import CurrentSkillRanking from './components/CurrentSkillRanking';
 import PreviousSkillRanking from './components/PreviousSkillRanking';
+import HomeActions from './components/HomeActions';
 import AddGameStat from './components/AddGameStat';
 
 function App() {
@@ -56,29 +57,27 @@ function App() {
 
   return (
     <Router>
-      <div className="container--main">
-        <Route
-          path='/'
-          exact
-          render={(props) => (
-            <>
-              {<PreviousSkillRanking
-                skillRanking={getPreviousSkillRanking()}
-                difference={getDifference()} />}
-              {<CurrentSkillRanking
-                skillRanking={getCurrentSkillRanking()} />}
-              {<Link to='/addGameStat'>Add Game Stat</Link>}
-            </>
-          )}
-        />
-        <Route
-          path='/addGameStat'
-          render={(props) => (
-            <AddGameStat onAdd={addGameStat} />
-          )}
-        />
-      </div>
-    </Router>
+      <Route
+        path='/'
+        exact
+        render={(props) => (
+          <>
+            {<PreviousSkillRanking
+              skillRanking={getPreviousSkillRanking()}
+              difference={getDifference()} />}
+            {<CurrentSkillRanking
+              skillRanking={getCurrentSkillRanking()} />}
+            {<HomeActions />}
+          </>
+        )}
+      />
+      <Route
+        path='/addGameStat'
+        render={(props) => (
+          <AddGameStat onAdd={addGameStat} />
+        )}
+      />
+    </Router >
   );
 }
 

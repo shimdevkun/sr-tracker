@@ -47,54 +47,54 @@ const AddGameStat = ({ onAdd }) => {
   }
 
   return (
-    <section id="add-game-stats" onSubmit={onSubmit}>
-      <ButtonExit />
-      <form className="form--add-game-stats">
-        <div>
-          <div className="form-col">
+    <section id="add-game-stat" onSubmit={onSubmit}>
+      <form className="form--add-game-stat">
+        <ButtonExit />
+        <div className="form-col">
 
-            <div className="form-group">
-              <label htmlFor="new-sr">New SR</label>
-              <input
-                name="new-sr"
-                type="number"
-                value={newSR}
-                onChange={(e) => setNewSR(parseInt(e.target.value))}
-                required />
-            </div>
-            <div className="form-group">
-              <label htmlFor="healing">Healing Done</label>
-              <input
-                name="healing"
-                type="number"
-                value={healing}
-                onChange={(e) => { setHealing(e.target.value) }} />
-            </div>
-
+          <div className="form-group">
+            <label htmlFor="new-sr">New SR</label>
+            <input
+              name="new-sr"
+              type="number"
+              value={newSR}
+              onChange={(e) => setNewSR(parseInt(e.target.value))}
+              required />
           </div>
-          <div className="form-col">
-
-            <div className="form-group">
-              <label htmlFor="hero">Hero Played</label>
-              <input
-                name="hero"
-                type="text"
-                value={hero}
-                onChange={(e) => { setHero(e.target.value) }} />
-            </div>
-            <div className="form-group">
-              <label htmlFor="map">Map</label>
-              <input
-                name="map"
-                type="text"
-                value={map}
-                onChange={(e) => { setMap(e.target.value) }} />
-            </div>
-
+          <div className="form-group">
+            <label htmlFor="healing">Healing Done</label>
+            <input
+              name="healing"
+              type="number"
+              value={healing}
+              onChange={(e) => { setHealing(e.target.value) }} />
           </div>
+
+        </div>
+        <div className="form-col">
+
+          <div className="form-group">
+            <label htmlFor="hero">Hero Played</label>
+            <input
+              name="hero"
+              type="text"
+              value={hero}
+              onChange={(e) => { setHero(e.target.value) }} />
+          </div>
+          <div className="form-group">
+            <label htmlFor="map">Map</label>
+            <input
+              name="map"
+              type="text"
+              value={map}
+              onChange={(e) => { setMap(e.target.value) }} />
+          </div>
+
         </div>
 
-        <input type="submit" value="Add Game Stats"></input>
+        <div className="form__submit">
+          <input type="submit" value="Add Game Stat" className="btn btn-primary"></input>
+        </div>
       </form>
     </section>
   )

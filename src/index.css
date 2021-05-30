@@ -2,6 +2,7 @@
   --primary: #5B48A4;
   --secondary: #755FC9;
   --terciary: #D6CCFD;
+  --overlay: rgba(73, 64, 109, 0.95);
   --red: #F27878;
   --green: #82EDA7;
   --white: #F4F4F4;
@@ -30,6 +31,34 @@ p {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+label, input {
+  font-size: 1.125rem;
+}
+
+input {
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 5px;
+
+  padding: .35em 0;
+  text-align: center;
+  color: var(--dark-grey);
+}
+
+input[type=submit] {
+  border: none;
+}
+
+input[type=submit]:hover,
+input[type=submit]:focus {
+  cursor: pointer;
+}
+
 /* ----- GLOBAL ----- */
 #root {
   min-height: 75vh;
@@ -38,6 +67,19 @@ p {
 
   justify-content: center;
   align-items: center;
+}
+
+.btn.btn-primary {
+  font-weight: 500;
+  border-radius: 5px;
+  
+  background: var(--secondary);
+  color: var(--white);
+}
+
+.btn.btn-primary:hover {
+  background: var(--terciary);
+  color: var(--primary);
 }
 
 /* ----- HOME ----- */
@@ -97,4 +139,83 @@ section#current-sr span {
   background: var(--white);
   color: var(--primary);
   border-radius: 10px;
+}
+
+/* HomeActions */
+section#home-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  padding: 1.25em 2em;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+section#home-actions .btn {
+  border-radius: 5px;
+  padding: 1em 1.45em;
+}
+
+/* AddGameStat */
+section#add-game-stat {
+  height: 100vh;
+  width: 100vw;
+
+  display: flex;
+  align-items: center;
+  background: var(--overlay);
+}
+
+section#add-game-stat .form--add-game-stat {
+  width: 30%;
+  margin: 0 auto;
+  padding: 5em 7em;
+  border-radius: 15px;
+  position: relative;
+  
+  background: var(--primary);
+}
+
+section#add-game-stat .form-col {
+  display: flex;
+}
+
+section#add-game-stat .form-col + .form-col {
+  margin-top: 2em;
+}
+
+section#add-game-stat .form-group + .form-group {
+  margin-left: 6.25em;
+}
+
+section#add-game-stat .form-group label {
+  color: var(--white);
+}
+
+section#add-game-stat .form-group input {
+  margin-top: .55em;
+}
+
+section#add-game-stat .btn {
+  margin: 0 auto;
+  padding: .9em 4.15em;
+  font-size: 1.25rem;
+}
+
+section#add-game-stat .form__submit {
+  margin-top: 2.75em;
+}
+
+section#add-game-stat .form__close {
+  position: absolute;
+  right: 1.56rem;
+  top: 1.56rem;
+  color: var(--terciary);
+  font-size: 1.35rem;
+}
+
+section#add-game-stat .form__close:hover,
+section#add-game-stat .form__close:focus {
+  color: var(--red);
 }
