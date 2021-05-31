@@ -219,3 +219,12 @@ section#add-game-stat .form__close:hover,
 section#add-game-stat .form__close:focus {
   color: var(--red);
 }
+
+/* History */
+#history table td {
+  padding: 0.5em 1.5em;
+}
+
+#history table td {
+  border: 1px solid var(--light-grey);
+}
