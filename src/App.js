@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import CurrentSkillRanking from './components/CurrentSkillRanking';
 import PreviousSkillRanking from './components/PreviousSkillRanking';
 import HomeActions from './components/HomeActions';
+import History from './components/History';
 import AddGameStat from './components/AddGameStat';
 
 function App() {
@@ -69,6 +70,12 @@ function App() {
               skillRanking={gameStats.length > 0 ? getCurrentSkillRanking() : 'N/A'} />}
             {<HomeActions />}
           </>
+        )}
+      />
+      <Route
+        path='/viewHistory'
+        render={(props) => (
+          <History gameStats={gameStats} />
         )}
       />
       <Route
