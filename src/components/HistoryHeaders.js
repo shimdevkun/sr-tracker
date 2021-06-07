@@ -2,10 +2,10 @@ const HistoryHeaders = () => {
   return (
     <thead>
       <tr>
-        <td>SR</td>
-        <td>Healing done</td>
-        <td>Hero</td>
-        <td>Map</td>
+        <td className="col__sr">SR</td>
+        <td className="col__healing">Healing done</td>
+        <td className="col__hero">Hero</td>
+        <td className="col__map">Map</td>
       </tr>
     </thead>
   )

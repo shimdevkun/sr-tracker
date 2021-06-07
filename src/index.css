@@ -10,6 +10,11 @@
   --dark-grey: #747474;
 }
 
+/* --- DEFAULTS --- */
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -59,7 +64,7 @@ input[type=submit]:focus {
   cursor: pointer;
 }
 
-/* ----- GLOBAL ----- */
+/* --- GLOBAL --- */
 #root {
   min-height: 75vh;
   display: flex;
@@ -69,20 +74,68 @@ input[type=submit]:focus {
   align-items: center;
 }
 
+/* Buttons */
+.btn {
+  font-weight: 500;
+  border-radius: 5px;
+  padding: 1em 1.45em;
+}
+
 .btn.btn-primary {
   font-weight: 500;
   border-radius: 5px;
   
   background: var(--secondary);
   color: var(--white);
+  border: 2px solid transparent;
 }
 
-.btn.btn-primary:hover {
+.btn.btn-primary:hover,
+.btn.btn-primary:focus {
   background: var(--terciary);
   color: var(--primary);
 }
 
-/* ----- HOME ----- */
+.btn.btn-secondary {
+  background: var(--primary);
+  color: var(--white);
+  border: 2px solid var(--white);
+}
+
+.btn.btn-secondary:hover,
+.btn.btn-secondary:focus {
+  background: var(--secondary);
+}
+
+/* Pop-up */
+.pop-up {
+  width: 40%;
+  margin: 0 auto;
+  padding: 5em 7em;
+  border-radius: 15px;
+  position: relative;
+  
+  background: var(--primary);
+}
+
+.pop-up__close{
+  position: absolute;
+  right: 1.56rem;
+  top: 1.56rem;
+  color: var(--terciary);
+  font-size: 1.35rem;
+}
+
+.pop-up__close svg {
+  border-radius: 10px;
+}
+
+.pop-up__close:hover,
+.pop-up__close:focus {
+  color: var(--red);
+}
+
+/* --- HOME --- */
 /* PreviousSkillRanking */
 section#previous-sr {
   color: var(--terciary);
@@ -143,21 +196,15 @@ section#current-sr span {
 
 /* HomeActions */
 section#home-actions {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-
-  padding: 1.25em 2em;
+  padding: 1.25em 0;
   font-size: 1.125rem;
-  font-weight: 500;
 }
 
-section#home-actions .btn {
-  border-radius: 5px;
-  padding: 1em 1.45em;
+section#home-actions .btn.btn-primary {
+  margin-left: 2.5em;
 }
 
-/* AddGameStat */
+/* --- ADD-GAME-STAT --- */
 section#add-game-stat {
   height: 100vh;
   width: 100vw;
@@ -165,16 +212,6 @@ section#add-game-stat {
   display: flex;
   align-items: center;
   background: var(--overlay);
-}
-
-section#add-game-stat .form--add-game-stat {
-  width: 30%;
-  margin: 0 auto;
-  padding: 5em 7em;
-  border-radius: 15px;
-  position: relative;
-  
-  background: var(--primary);
 }
 
 section#add-game-stat .form-col {
@@ -207,24 +244,64 @@ section#add-game-stat .form__submit {
   margin-top: 2.75em;
 }
 
-section#add-game-stat .form__close {
-  position: absolute;
-  right: 1.56rem;
-  top: 1.56rem;
-  color: var(--terciary);
-  font-size: 1.35rem;
+/* --- HISTORY --- */
+#history {
+  font-size: 1.125rem;
+
+  height: 100vh;
+  width: 100vw;
+
+  display: flex;
+  align-items: center;
+  background: var(--overlay);
 }
 
-section#add-game-stat .form__close:hover,
-section#add-game-stat .form__close:focus {
-  color: var(--red);
+#history table tr {
+  display: flex;
+  border: 0;
+  border-radius: 5px;
+  width: 100%;
 }
 
-/* History */
 #history table td {
   padding: 0.5em 1.5em;
 }
 
-#history table td {
-  border: 1px solid var(--light-grey);
+#history .history__row {
+  display: inline-flex;
+}
+#history .col__sr,
+#history .col__healing {
+  text-align: center;
+}
+
+#history .col__sr {
+  width: 15%;
+}
+
+#history .col__hero {
+  width: 20%;
+}
+
+
+#history .col__healing {
+  width: 35%;
+}
+
+#history .col__map {
+  width: 30%;
+}
+
+#history table tbody tr {
+  margin-top: 0.83em;
+}
+
+#history thead tr {
+  background: var(--secondary);
+  color: var(--white);
+}
+
+#history tbody tr {
+  background: var(--white);
+  color: var(--dark-grey);
 }

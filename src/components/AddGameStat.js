@@ -48,7 +48,7 @@ const AddGameStat = ({ onAdd }) => {
 
   return (
     <section id="add-game-stat" onSubmit={onSubmit}>
-      <form className="form--add-game-stat">
+      <form className="pop-up">
         <ButtonExit />
         <div className="form-col">
 
